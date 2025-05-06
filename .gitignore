@@ -1,0 +1,5 @@
+/archive
+/.idea
+/.ipynb_checkpoints
+/.venv
+*.csv
