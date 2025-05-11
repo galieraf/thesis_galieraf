@@ -7,7 +7,7 @@ This repository contains code and experiments related to the **bachelor thesis**
 **Supervisor:** doc. Dr. rer. nat. Ing. Jan Valdman  
 **Department of Applied Mathematics, FIT CTU in Prague**  
 **Year:** 2025  
-📎 [Link to the thesis – TODO]
+📎 Link to the official thesis will be added upon publication.
 
 > ⚠️ This repository is provided under a license. If you use or refer to this work, please cite the official source once published.
 
@@ -16,7 +16,7 @@ This repository contains code and experiments related to the **bachelor thesis**
 ## Project Setup
 
 ### **Environment**
-This project requires **Python 3.9 or later**. It is recommended to use a virtual environment to manage dependencies.
+This project requires [Python 3.9+](https://www.python.org/downloads/). It is recommended to use a virtual environment to manage dependencies.
 
 #### **Create and activate a virtual environment**
 On **Windows** (PowerShell):
@@ -70,6 +70,13 @@ Alternatively, you can download them manually:
 - [single_yield_data.csv](https://drive.google.com/file/d/1_e_HIhL6_VV4697zhCPgb_74YUbqV30l/view?usp=sharing)
 - [multi_yield_data.csv](https://drive.google.com/file/d/1V5jn_kHqSuv2Uo-Ky96eGpp1URbXB6JI/view?usp=sharing)
 
+You can also generate your own datasets or experiment with different loading conditions directly in the notebooks:
+
+- `multi-yield/multi-yield_deformation.ipynb`
+- `single-yield/single-yield_deformation.ipynb`
+
+These notebooks allow you to modify boundary conditions and rerun the simulations to produce custom data.
+
 ---
 
 ## 🗂️ Project Structure
@@ -77,31 +84,48 @@ Alternatively, you can download them manually:
 ```
 bi-bap-galieraf-main/
 ├── README.md                  ← this file
-├── requirements.txt           ← Python dependencies
+├── requirements.txt           ← Project dependencies
 ├── download_data.py           ← script to download datasets
-├── archive/                   ← experimental notebooks (e.g. 3D tests)
 ├── images/                    ← visualizations used in the thesis
 │   ├── multi-yield/
 │   └── single-yield/
 ├── multi-yield/               ← main experiments for multi-yield case
+│   ├── multi-yield_NN.ipynb   ← training notebook for the neural network
+│   ├── multi-yield_deformation.ipynb← notebook for visualizing and evaluating results
+│   ├── multi-yield_best_model.pkl ← trained model weights
+│   ├── multi-yield_scaler_A.pkl ← fitted scaler for input A
+│   ├── multi-yield_scaler_P_init.pkl← fitted scaler for initial P
+│   └── multi-yield_scaler_P_target.pkl ← fitted scaler for target P
 ├── single-yield/              ← main experiments for single-yield case
-├── data/                      ← dataset folder (populated by script)
-└── ...
+│   ├── single-yield_NN.ipynb  ← training notebook for the neural network
+│   ├── single-yield_deformation.ipynb← notebook for visualizing and evaluating results
+│   ├── best_model_overall_bigger_data.pkl ← trained model weights
+│   ├── scaler_A.pkl ← fitted scaler for input A
+│   └── scaler_P.pkl ← fitted scaler for output P
+└── data/                      ← dataset folder (populated by script)
 ```
 
 ---
+## ▶️ Running the Notebooks
+
+To open and run the Jupyter notebooks (`*.ipynb`) included in this project, run the following command from the root directory of the repository:
+
+```bash
+jupyter notebook
+```
+This will launch the Jupyter Notebook interface in your default web browser.
+From there, you can navigate to any notebook (e.g., `multi-yield/multi-yield_NN.ipynb`) and execute it cell by cell.
+
 
 ## 📜 License
 
-This code is part of an academic project.  
-You may use, reference, and modify it **only for research and educational purposes**.  
-Commercial use is **not permitted** without explicit consent from the FIT ČVUT.
+This code is part of a bachelor thesis submitted to FIT CTU in Prague.  
+It is released under a free-use license, allowing anyone to use, modify, and distribute the work for any purpose, including commercial use, without restriction, as declared in the author's official thesis submission.
 
-For citation or usage, please refer to the final version of the thesis once published.  
-📎 [Link to the thesis – TODO]
+This permission is granted in accordance with Czech Copyright Act No. 121/2000 Coll., and Section 2373(2) of Act No. 89/2012 Coll.  
+The legal terms are stated in the official **Declaration** section of the submitted thesis.
 
-The legal licensing terms are defined in the official **Declaration** section of the
-submitted thesis, in accordance with Czech Copyright Act No. 121/2000 Coll.
+📎 The thesis will be available publicly after final submission.
 
 ---
 
